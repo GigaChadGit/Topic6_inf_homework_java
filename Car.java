@@ -21,6 +21,17 @@ public class Car {
         this.regnum = regnum;
     }
 
+    @Override
+    public String toString() {
+        return "id: " + id + 
+               ", brand: " + brend + 
+               ", model: " + model + 
+               ", year: " + year + 
+               ", color: " + color + 
+               ", cost: " + cost + 
+               ", registration number: " + regnum;
+    }
+
     // get и set для каждого параметра конструктора
 
     public int getId() {return id;}

@@ -11,12 +11,13 @@ public class Main {
 
         // применяем метод который возвращает одинаковые бренды и записываем его в переменную
         Car[] toyotaCars = getCarByBrend(cars, "Toyota");
-        System.out.println("Toyota cars count: " + toyotaCars.length); // выводим количество одинаховых брендов
-
-        // выводим все бренды машин
-        for (Car car : cars) {
-            System.out.println(car.getBrend());
+        
+        // выводим массив машин с одинаковыми брендами
+        for(Car car : toyotaCars) {
+            System.out.println(car);
         }
+
+
 
      }
 
