@@ -1,19 +1,19 @@
 public class Car {
     // классы
     private int id;
-    private String mark;
+    private String brend;
     private String model;
     private int year;
     private String color;
     private int cost;
-    private int regnum;
+    private String regnum;
 
     // конструктор
-    public Car(int id, String mark, String model, 
+    public Car(int id, String brend, String model, 
                int year, String color,
-               int cost, int regnum) {
+               int cost, String regnum) {
         this.id = id;
-        this.mark = mark;
+        this.brend = brend;
         this.model = model;
         this.year = year;
         this.color = color;
@@ -26,8 +26,8 @@ public class Car {
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
 
-    public String getMark() {return mark;}
-    public void setMark(String mark) {this.mark = mark;}
+    public String getBrend() {return brend;}
+    public void setBrend(String brend) {this.brend = brend;}
 
     public String getModel() {return model;}
     public void setModel(String model) {this.model = model;}
@@ -41,7 +41,7 @@ public class Car {
     public int getCost() {return cost;}
     public void setCost(int cost) {this.cost = cost;}
 
-    public int getRegnum() {return regnum;}
-    public void setRegnum(int regnum) {this.regnum = regnum;}
+    public String getRegnum() {return regnum;}
+    public void setRegnum(String regnum) {this.regnum = regnum;}
 
 }
