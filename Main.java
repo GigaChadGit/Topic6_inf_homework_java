@@ -16,8 +16,14 @@ public class Main {
         for(Car car : toyotaCars) {
             System.out.println(car);
         }
-
-
+        
+        // применяем метод getCarByBrendAndYearOperational
+        Car[] markAndYear = getCarByBrendAndYearOperational(cars, "Toyota", 2020);
+        
+        // Выводим машины на которые этот метод стработал
+        for(Car car : markAndYear) {
+            System.out.println(car);
+        }
 
      }
 
@@ -47,5 +53,48 @@ public class Main {
         }
 
         return result;
+    }
+
+    public static Car[] getCarByBrendAndYearOperational(Car[] cars, String brend, int year) {
+        // подсчет количества машин с наибольшим годом
+        int count = 0;
+        for (Car car : cars) {
+            if (year > car.getYear()) {
+                count++;
+            }
+        }
+
+        // нет машин = пустой список
+        if (count == 0) {
+            return new Car[0];
+        }
+
+        // массив для найденных машин
+        Car[] resultYear = new Car[count];
+        int index = 0;
+
+        // Заполняем массив найденными машинами
+        for (Car car : cars) {
+            if (year > car.getYear()) {
+                resultYear[index++] = car;
+            }
+        }
+
+
+        // используем метод который описывали ране чтобы получить бренды
+        Car[] resultBrend = getCarByBrend(cars, brend);
+
+        Car[] finalResult = new Car[resultBrend.length + resultYear.length];
+
+        // копируем в этот итоговый массив все значения из esultBrend и resultYear
+        System.arraycopy(resultBrend, 0, 
+                         finalResult, 0, 
+                         resultBrend.length);
+
+        System.arraycopy(resultYear, 0, 
+                         finalResult, resultBrend.length, 
+                         resultYear.length);
+        
+        return finalResult;
     }
 }
