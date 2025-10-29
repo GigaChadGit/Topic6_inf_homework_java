@@ -1,6 +1,7 @@
 package com.sibsutis.devices;
 
-import com.sibsutis.Printable   ;
+import com.sibsutis.Printable;
+import java.util.Objects;
 
 public abstract class Device implements Printable {
     private int id;
@@ -25,5 +26,18 @@ public abstract class Device implements Printable {
     }
 
     public abstract String getDeviceType();
+
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Device device = (Device) obj;
+        return id == device.id && price == device.price;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, price);
+    }
 
 }
