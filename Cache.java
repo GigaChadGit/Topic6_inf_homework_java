@@ -45,18 +45,10 @@ public class Cache<T> {
         return false;
     }
 
+
     public T getFirst() {
         return cacheList.getFirst();
     }
-
-    public T getLast() {
-        return cacheList.getLast();
-    }
-
-    public T gettenByIndex(int i) {
-        return cacheList.get(i);
-    }
-
 
 
 
