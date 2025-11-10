@@ -45,8 +45,5 @@ public class Cachetest {
 
         System.out.println(cacheData.gettenByIndex(0));
         System.out.println(cacheData.getAllElements() + "\n");
-
- 
-
     }
 }
