@@ -19,5 +19,26 @@ public class Cache<T> {
         cacheList.addLast(element); // добавляем новый элемент в конец списка
     }
 
+    public T boolRemove(T element) {
+        if (!cacheList.isEmpty()) { // опрератор ! означает "не"
+            boolean removed = cacheList.remove(element);
+            return removed ? element : null;
+
+        } else {
+            return null;
+            
+        }
+    }
+
+
+
+
+
+
+    // для теста методов (вывод списка)
+     public LinkedList<T> getAllElements() {
+        return new LinkedList<>(cacheList); // Возвращаем копию списка
+    }
+
 
 }
