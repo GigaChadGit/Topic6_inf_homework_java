@@ -19,16 +19,45 @@ public class Cache<T> {
         cacheList.addLast(element); // добавляем новый элемент в конец списка
     }
 
-    public T boolRemove(T element) {
+    public boolean remove(T element) {
         if (!cacheList.isEmpty()) { // опрератор ! означает "не"
-            boolean removed = cacheList.remove(element);
-            return removed ? element : null;
+            cacheList.remove(element);
+            return true;
 
         } else {
-            return null;
-            
+            System.out.println("Список пуст");
+            return false;
+
         }
     }
+
+    public boolean exists(T element) {
+        if (element != null) {
+            for (T item : cacheList) {
+                if (item.equals(element)) {
+                    System.out.println(element + " такой элемент найден");
+                    return true;
+                }
+            }
+        }
+        
+        System.out.println(element + " такой элемент не найден");
+        return false;
+    }
+
+    public T getFirst() {
+        return cacheList.getFirst();
+    }
+
+    public T getLast() {
+        return cacheList.getLast();
+    }
+
+    public T gettenByIndex(int i) {
+        return cacheList.get(i);
+    }
+
+
 
 
 
