@@ -26,7 +26,26 @@ public class Cachetest {
         cacheData.exists("92dd");
         System.out.println(cacheData.getAllElements());
         cacheData.exists("2b");
-        System.out.println(cacheData.getAllElements());
+        System.out.println(cacheData.getAllElements() + "\n");
+
+
+        System.out.println("Тест метода getFirst");
+
+        System.out.println(cacheData.getFirst());
+        System.out.println(cacheData.getAllElements() + "\n");
+
+
+        System.out.println("Тест метода getLast");
+
+        System.out.println(cacheData.getLast());
+        System.out.println(cacheData.getAllElements() + "\n");
+
+
+        System.out.println("Тест метода gettenByIndex");
+
+        System.out.println(cacheData.gettenByIndex(0));
+        System.out.println(cacheData.getAllElements() + "\n");
+
 
 
     }

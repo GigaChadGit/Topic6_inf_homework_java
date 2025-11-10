@@ -50,6 +50,13 @@ public class Cache<T> {
         return cacheList.getFirst();
     }
 
+    public T getLast() {
+        return cacheList.getLast();
+    }
+
+    public T gettenByIndex(int i) {
+        return cacheList.get(i);
+    }
 
 
 
